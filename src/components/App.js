@@ -180,7 +180,7 @@ class App extends Component {
       .on('transactionHash', (hash) => {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
-          tokenURIs : [...this.state.tokenURIs, window.location.origin + CARD_ARRAY[optionOneId].img],
+          tokenURIs : [...this.state.tokenURIs, CARD_ARRAY[optionOneId].img],
           //played : true
       })
       })
