@@ -52,7 +52,7 @@ const CARD_ARRAY = [
   },
   {
     name: 'milkshake',
-    img: 'milkshake.png'
+    img: 'images/milkshake.png'
   },
   {
     name: 'hotdog',
@@ -95,7 +95,7 @@ class App extends Component {
       const token = new web3.eth.Contract(Token.abi, Token.networks[networkId].address)
       const dbank = new web3.eth.Contract(dBank.abi, dBank.networks[networkId].address)
       const dBankAddress = dBank.networks[networkId].address;
-      this.setState({nftToken, token, dbank,dBankAddress})
+      this.setState({nftToken, token, dbank, dBankAddress})
       // const totalSupply = await nftToken.methods.totalSupply().call()
       // this.setState({totalSupply : totalSupply})
 
@@ -143,12 +143,12 @@ class App extends Component {
   chooseImage = (cardId) => {
     cardId = cardId.toString()
     if(this.state.cardsWon.includes(cardId)){
-      return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/white.png'
+      return '/images/white.png'
     }
     else if(this.state.cardsChosenId.includes(cardId)){
       return CARD_ARRAY[cardId].img
     } else {
-    return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/blank.png'
+    return '/images/blank.png'
     }
   }
 
