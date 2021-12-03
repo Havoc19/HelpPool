@@ -148,7 +148,7 @@ class App extends Component {
     else if(this.state.cardsChosenId.includes(cardId)){
       return CARD_ARRAY[cardId].img
     } else {
-    return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/blank.png'
+    return "https://github.com/Havoc19/HelpPool/tree/gh-pages" + '/images/blank.png'
     }
   }
 
@@ -175,12 +175,12 @@ class App extends Component {
       alert('You found a match')
       this.state.nftToken.methods.mint(
         this.state.account,
-        window.location.origin + CARD_ARRAY[optionOneId].img.toString()
+        "https://github.com/Havoc19/HelpPool/tree/gh-pages" + CARD_ARRAY[optionOneId].img.toString()
       ).send({from : this.state.account})
       .on('transactionHash', (hash) => {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
-          tokenURIs : [...this.state.tokenURIs, window.location.origin + CARD_ARRAY[optionOneId].img],
+          tokenURIs : [...this.state.tokenURIs, "https://github.com/Havoc19/HelpPool/tree/gh-pages" + CARD_ARRAY[optionOneId].img],
           //played : true
       })
       })
@@ -328,12 +328,12 @@ class App extends Component {
                 <h5>Tokens Collected:<span id="result">&nbsp;{this.state.tokenURIs.length}</span></h5>
                   <div className="grid mb-4" >
                   { this.state.tokenURIs.map((tokenURI, key) => {
-                      return(
+                      {/* return(
                         <img
                           key={key}
                           src={tokenURI}
                         />
-                      )
+                      ) */}
                       {console.log(key, tokenURI)}
                     })}
                     {/* {console.log(this.state.tokenURIs)} */}
