@@ -12,51 +12,51 @@ import { NftGallery } from 'react-nft-gallery';
 const CARD_ARRAY = [
   {
     name: 'fries',
-    img: 'images/fries.png'
+    img: '/images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: 'images/cheeseburger.png'
+    img: '/images/cheeseburger.png'
   },
   {
     name: 'ice-cream',
-    img: 'images/ice-cream.png'
+    img: '/images/ice-cream.png'
   },
   {
     name: 'pizza',
-    img: 'images/pizza.png'
+    img: '/images/pizza.png'
   },
   {
     name: 'milkshake',
-    img: 'images/milkshake.png'
+    img: '/images/milkshake.png'
   },
   {
     name: 'hotdog',
-    img: 'images/hotdog.png'
+    img: '/images/hotdog.png'
   },
   {
     name: 'fries',
-    img: 'images/fries.png'
+    img: '/images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: 'images/cheeseburger.png'
+    img: '/images/cheeseburger.png'
   },
   {
     name: 'ice-cream',
-    img: 'images/ice-cream.png'
+    img: '/images/ice-cream.png'
   },
   {
     name: 'pizza',
-    img: 'images/pizza.png'
+    img: '/images/pizza.png'
   },
   {
     name: 'milkshake',
-    img: 'images/milkshake.png'
+    img: '/images/milkshake.png'
   },
   {
     name: 'hotdog',
-    img: 'images/hotdog.png'
+    img: '/images/hotdog.png'
   }
 ]
 
@@ -143,12 +143,12 @@ class App extends Component {
   chooseImage = (cardId) => {
     cardId = cardId.toString()
     if(this.state.cardsWon.includes(cardId)){
-      return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/white.png'
+      return 'https://havoc19.github.io/HelpPool/' + '/images/white.png'
     }
     else if(this.state.cardsChosenId.includes(cardId)){
       return CARD_ARRAY[cardId].img
     } else {
-    return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/blank.png'
+    return 'https://havoc19.github.io/HelpPool/' + '/images/blank.png'
     }
   }
 
