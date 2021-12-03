@@ -143,12 +143,12 @@ class App extends Component {
   chooseImage = (cardId) => {
     cardId = cardId.toString()
     if(this.state.cardsWon.includes(cardId)){
-      return 'https://havoc19.github.io/HelpPool' + '/images/white.png'
+      return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/white.png'
     }
     else if(this.state.cardsChosenId.includes(cardId)){
       return CARD_ARRAY[cardId].img
     } else {
-    return 'https://havoc19.github.io/HelpPool' + '/images/blank.png'
+    return 'https://github.com/Havoc19/HelpPool/tree/gh-pages' + '/images/blank.png'
     }
   }
 
