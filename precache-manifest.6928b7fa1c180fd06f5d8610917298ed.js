@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "37e672f6ad7d8c9ba321",
+    "revision": "ee6d2b8cf7939228e6f3",
     "url": "/HelpPool/static/css/main.9406f3ac.chunk.css"
   },
   {
-    "revision": "37e672f6ad7d8c9ba321",
-    "url": "/HelpPool/static/js/main.37e672f6.chunk.js"
+    "revision": "ee6d2b8cf7939228e6f3",
+    "url": "/HelpPool/static/js/main.ee6d2b8c.chunk.js"
   },
   {
     "revision": "9fc69475d71b0b73005a",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/HelpPool/static/js/runtime~main.0cb72dd4.js"
   },
   {
-    "revision": "c897c7c9531d8a0594edc04f2c2aa2ba",
+    "revision": "2c8e199cedc09f4965d90770ebcf8ce2",
     "url": "/HelpPool/index.html"
   }
 ];
