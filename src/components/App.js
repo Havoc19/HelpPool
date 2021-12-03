@@ -12,51 +12,51 @@ import { NftGallery } from 'react-nft-gallery';
 const CARD_ARRAY = [
   {
     name: 'fries',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/fries.png'
+    img: 'images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/cheeseburger.png'
+    img: 'images/cheeseburger.png'
   },
   {
     name: 'ice-cream',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/ice-cream.png'
+    img: 'images/ice-cream.png'
   },
   {
     name: 'pizza',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/pizza.png'
+    img: 'images/pizza.png'
   },
   {
     name: 'milkshake',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/milkshake.png'
+    img: 'images/milkshake.png'
   },
   {
     name: 'hotdog',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/hotdog.png'
+    img: 'images/hotdog.png'
   },
   {
     name: 'fries',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/fries.png'
+    img: 'images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/cheeseburger.png'
+    img: 'images/cheeseburger.png'
   },
   {
     name: 'ice-cream',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/ice-cream.png'
+    img: 'images/ice-cream.png'
   },
   {
     name: 'pizza',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/pizza.png'
+    img: 'images/pizza.png'
   },
   {
     name: 'milkshake',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/milkshake.png'
+    img: 'milkshake.png'
   },
   {
     name: 'hotdog',
-    img: 'https://github.com/Havoc19/HelpPool/tree/gh-pages/images/hotdog.png'
+    img: 'images/hotdog.png'
   }
 ]
 
@@ -180,7 +180,7 @@ class App extends Component {
       .on('transactionHash', (hash) => {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
-          tokenURIs : [...this.state.tokenURIs, CARD_ARRAY[optionOneId].img],
+          tokenURIs : [...this.state.tokenURIs, window.location.origin + CARD_ARRAY[optionOneId].img],
           //played : true
       })
       })
