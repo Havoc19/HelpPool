@@ -175,12 +175,12 @@ class App extends Component {
       alert('You found a match')
       this.state.nftToken.methods.mint(
         this.state.account,
-        CARD_ARRAY[optionOneId].img.toString()
+        window.location.origin + CARD_ARRAY[optionOneId].img.toString()
       ).send({from : this.state.account})
       .on('transactionHash', (hash) => {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
-          tokenURIs : [...this.state.tokenURIs,'https://havoc19.github.io/HelpPool/' +  CARD_ARRAY[optionOneId].img],
+          tokenURIs : [...this.state.tokenURIs, CARD_ARRAY[optionOneId].img],
           //played : true
       })
       })
