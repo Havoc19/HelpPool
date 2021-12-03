@@ -6,6 +6,8 @@ import Token from '../abis/Token.json';
 import dBank from '../abis/Pool.json';
 import NftToken from '../abis/NftToken.json';
 import hp from '../HelpPool.png';
+import { NftGallery } from 'react-nft-gallery';
+
 
 const CARD_ARRAY = [
   {
@@ -89,9 +91,7 @@ class App extends Component {
     const networkId = await web3.eth.net.getId()
     const networkData = NftToken.networks[networkId]
     if(networkData){
-      const abi = NftToken.abi
-      const address = networkData.address
-      const nftToken = new web3.eth.Contract(abi, address)
+      const nftToken = new web3.eth.Contract(NftToken.abi, NftToken.networks[networkId].address)
       const token = new web3.eth.Contract(Token.abi, Token.networks[networkId].address)
       const dbank = new web3.eth.Contract(dBank.abi, dBank.networks[networkId].address)
       const dBankAddress = dBank.networks[networkId].address;
@@ -99,12 +99,11 @@ class App extends Component {
       // const totalSupply = await nftToken.methods.totalSupply().call()
       // this.setState({totalSupply : totalSupply})
 
-
-
       let balanceOf = await nftToken.methods.balanceOf(accounts[0]).call()
       for(let i = 0; i < balanceOf; i++){
         let id = await nftToken.methods.tokenOfOwnerByIndex(accounts[0], i).call()
         let tokenURI = await nftToken.methods.tokenURI(id).call()
+        console.log(tokenURI)
         this.setState({
           tokenURIs: [...this.state.tokenURIs, tokenURI]
         })
@@ -181,13 +180,13 @@ class App extends Component {
       .on('transactionHash', (hash) => {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
-          tokenURIs : [...this.state.tokenURIs, CARD_ARRAY[optionOneId].img],
-          played : true
+          tokenURIs : [...this.state.tokenURIs, window.location.origin + CARD_ARRAY[optionOneId].img],
+          //played : true
       })
       })
     }else {
       alert('Better Luck Next Time, Thanks For Playing')
-      this.setState({played : true})
+      //this.setState({played : true})
     }
     this.setState({
       cardsChosen: [],
@@ -316,22 +315,7 @@ class App extends Component {
 
                 </div>
                 <div>
-
-                <h5>Tokens Collected:<span id="result">&nbsp;{this.state.tokenURIs.length}</span></h5>
-
-                  <div className="grid mb-4" >
-
-                  { this.state.tokenURIs.map((tokenURI, key) => {
-                      return(
-                        <img
-                          key={key}
-                          src={tokenURI}
-                        />
-                      )
-                    })}
-
-                  </div>
-
+        
                 </div>
 
               </div>
@@ -340,6 +324,22 @@ class App extends Component {
           </div>
              : null}
           </div>
+          <div>
+                <h5>Tokens Collected:<span id="result">&nbsp;{this.state.tokenURIs.length}</span></h5>
+                  <div className="grid mb-4" >
+                  { this.state.tokenURIs.map((tokenURI, key) => {
+                      return(
+                        <img
+                          key={key}
+                          src={tokenURI}
+                        />
+                      )
+                      {console.log(key, tokenURI)}
+                    })}
+                    {/* {console.log(this.state.tokenURIs)} */}
+                  </div>
+                  {/* <NftGallery ownerAddress/> */}
+            </div>
         </div>
         <div className="first">
         <div>
