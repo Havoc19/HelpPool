@@ -181,12 +181,12 @@ class App extends Component {
         this.setState({
           cardsWon: [...this.state.cardsWon,optionOneId,optionTwoId],
           tokenURIs : [...this.state.tokenURIs, CARD_ARRAY[optionOneId].img],
-          //played : true
+          played : true
       })
       })
     }else {
       alert('Better Luck Next Time, Thanks For Playing')
-      //this.setState({played : true})
+      this.setState({played : true})
     }
     this.setState({
       cardsChosen: [],
@@ -335,9 +335,7 @@ class App extends Component {
                         />
                       )
                     })}
-                    {/* {console.log(this.state.tokenURIs)} */}
                   </div>
-                  {/* <NftGallery ownerAddress/> */}
             </div>
         </div>
         <div className="first">
